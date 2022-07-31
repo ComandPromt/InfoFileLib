@@ -41,7 +41,7 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 
 	private JTextField file;
 
-	public Color color;
+	public Color color = new Color(240, 240, 240);
 
 	JLabel contador;
 
@@ -49,11 +49,31 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 
 	int indice;
 
+	JButton btnNewButton;
+
+	JButton btnNewButton_2;
+
+	JButton btnNewButton_3;
+
+	JButton back;
+
+	JButton next;
+
 	Point mouseClickPoint;
 
 	public void setColor(Color color) {
 
-		this.color = color;
+		getContentPane().setBackground(color);
+
+		btnNewButton.setBackground(color);
+
+		btnNewButton_2.setBackground(color);
+
+		btnNewButton_3.setBackground(color);
+
+		back.setBackground(color);
+
+		next.setBackground(color);
 
 	}
 
@@ -74,6 +94,7 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 	}
 
 	public InfoFile(List<String> lista) {
+
 		addMouseListener(new MouseAdapter() {
 
 			@Override
@@ -100,6 +121,7 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 			}
 
 		});
+
 		if (lista.isEmpty()) {
 
 			System.exit(0);
@@ -110,11 +132,9 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 
 		setIconImage(Toolkit.getDefaultToolkit().getImage(InfoFile.class.getResource("/images/info.png")));
 
-		this.color = new Color(240, 240, 240);
+		getContentPane().setBackground(this.color);
 
-		getContentPane().setBackground(color);
-
-		setTitle("Update Anuncios X -Nuevo Registro");
+		setTitle("InfoFile");
 
 		initComponents();
 
@@ -122,7 +142,6 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 
 		setShape(new RoundRectangle2D.Double(0, 0, 498, 150, 50, 50));
 
-		this.setVisible(true);
 	}
 
 	private void adelante() {
@@ -232,18 +251,30 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 
 		indice = 0;
 
+		JButton btnNewButton_1 = new JButton("");
+
 		contador = new JLabel("New label");
+
 		contador.addMouseWheelListener(new MouseWheelListener() {
+
 			public void mouseWheelMoved(MouseWheelEvent e) {
+
 				rueda(e);
+
 			}
+
 		});
 
 		preview = new JLabel("");
+
 		preview.addMouseWheelListener(new MouseWheelListener() {
+
 			public void mouseWheelMoved(MouseWheelEvent e) {
+
 				rueda(e);
+
 			}
+
 		});
 
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -253,8 +284,6 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 		setResizable(false);
 
 		Date myDate = new Date();
-
-		JButton btnNewButton_1 = new JButton("");
 
 		btnNewButton_1.setBorder(null);
 
@@ -271,8 +300,11 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 		});
 
 		JButton btnNewButton_1_1 = new JButton("");
+
 		btnNewButton_1_1.setBorder(null);
+
 		btnNewButton_1_1.setFocusPainted(false);
+
 		btnNewButton_1_1.setIcon(new ImageIcon(InfoFile.class.getResource("/images/min.png")));
 
 		btnNewButton_1_1.addActionListener(new ActionListener() {
@@ -301,11 +333,16 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 
 		file.setColumns(10);
 
-		JButton btnNewButton = new JButton("Copy");
+		btnNewButton = new JButton("Copy");
+
 		btnNewButton.addMouseWheelListener(new MouseWheelListener() {
+
 			public void mouseWheelMoved(MouseWheelEvent e) {
+
 				rueda(e);
+
 			}
+
 		});
 
 		btnNewButton.addActionListener(new ActionListener() {
@@ -319,16 +356,25 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 		});
 
 		btnNewButton.setFocusPainted(false);
+
 		btnNewButton.setBorder(null);
+
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+
 		btnNewButton.setBackground(color);
+
 		btnNewButton.setIcon(new ImageIcon(InfoFile.class.getResource("/images/copy.png")));
 
-		JButton btnNewButton_2 = new JButton("Open");
+		btnNewButton_2 = new JButton("Open");
+
 		btnNewButton_2.addMouseWheelListener(new MouseWheelListener() {
+
 			public void mouseWheelMoved(MouseWheelEvent e) {
+
 				rueda(e);
+
 			}
+
 		});
 
 		btnNewButton_2.addActionListener(new ActionListener() {
@@ -342,16 +388,25 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 		});
 
 		btnNewButton_2.setFocusPainted(false);
+
 		btnNewButton_2.setBorder(null);
+
 		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+
 		btnNewButton_2.setBackground(color);
+
 		btnNewButton_2.setIcon(new ImageIcon(InfoFile.class.getResource("/images/abrir.png")));
 
-		JButton btnNewButton_3 = new JButton("View");
+		btnNewButton_3 = new JButton("View");
+
 		btnNewButton_3.addMouseWheelListener(new MouseWheelListener() {
+
 			public void mouseWheelMoved(MouseWheelEvent e) {
+
 				rueda(e);
+
 			}
+
 		});
 
 		btnNewButton_3.addActionListener(new ActionListener() {
@@ -365,16 +420,25 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 		});
 
 		btnNewButton_3.setFocusPainted(false);
+
 		btnNewButton_3.setBorder(null);
+
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+
 		btnNewButton_3.setBackground(color);
+
 		btnNewButton_3.setIcon(new ImageIcon(InfoFile.class.getResource("/images/view.png")));
 
-		JButton back = new JButton("");
+		back = new JButton("");
+
 		back.addMouseWheelListener(new MouseWheelListener() {
+
 			public void mouseWheelMoved(MouseWheelEvent e) {
+
 				rueda(e);
+
 			}
+
 		});
 
 		back.addActionListener(new ActionListener() {
@@ -388,10 +452,14 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 		});
 
 		back.setFocusPainted(false);
+
 		back.setBorder(null);
+
 		back.setIcon(new ImageIcon(InfoFile.class.getResource("/images/back.png")));
+
 		back.setBackground(color);
-		JButton next = new JButton("");
+
+		next = new JButton("");
 
 		next.addMouseWheelListener(new MouseWheelListener() {
 
@@ -440,6 +508,7 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 		previsualizar(listaDatos.get(0));
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+
 		layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(layout.createSequentialGroup().addContainerGap()
 						.addGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(layout.createSequentialGroup()
@@ -498,8 +567,11 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 	private void previsualizar(String string) {
 
 		try {
+
 			int index = indice;
+
 			index++;
+
 			contador.setText(index + " / " + listaDatos.size());
 
 			file.setText(string);
