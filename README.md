@@ -1,2 +1,5 @@
 # InfoFileLib
-Small library to see the information of the images
+
+## Small library to see the information of the images
+
+![Preview](preview.png)
