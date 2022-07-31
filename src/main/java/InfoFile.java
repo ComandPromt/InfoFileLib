@@ -205,6 +205,26 @@ public class InfoFile extends javax.swing.JFrame implements ActionListener, Chan
 
 	}
 
+	public void verImagen(int index) {
+
+		this.indice = 0;
+
+		if (index < listaDatos.size()) {
+
+			this.indice = index;
+
+			previsualizar(listaDatos.get(index));
+
+		}
+
+		else {
+
+			previsualizar(listaDatos.get(0));
+
+		}
+
+	}
+
 	private void abrir(boolean archivo) {
 
 		String ruta = file.getText();
